@@ -3,6 +3,7 @@ package tests.simple;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SkippedTests {
@@ -14,11 +15,11 @@ public class SkippedTests {
     @Test
     @Disabled
     void test01() {
-        assertTrue(false);
+        assertFalse(false);
     }
     @Test
     @Disabled("some reason")
     void test02() {
-        assertTrue(false);
+        assertFalse(false);
     }
 }
