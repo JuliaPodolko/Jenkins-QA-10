@@ -2,6 +2,7 @@ package demoqa;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -12,15 +13,9 @@ import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
 
 @Tag("demoqa")
-public class RegistrationFormTests {
-
-    @BeforeAll
-    static void setUP () {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
-
-    @Test
+public class RegistrationFormTests extends TestBase {
+     @Test
+     @DisplayName("Successful fill registration test")
     void fillFormTest () {
         String firstName = "Julia",
                 lastName = "Podolko",
