@@ -8,6 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
     @BeforeAll
     static void setUP () {
@@ -27,5 +29,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        closeWebDriver();
     }
 }
