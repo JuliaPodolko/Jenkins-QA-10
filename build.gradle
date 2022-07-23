@@ -59,6 +59,12 @@ task demoqa_tests(type: Test) {
     }
 }
 
+task simple_tests(type: Test) {
+    useJUnitPlatform{
+        includeTags "simple"
+    }
+}
+
 task test5(type: Test) {
     useJUnitPlatform{
         includeTags "test5"
