@@ -7,4 +7,6 @@ curl -X POST \
      "-DconfigFile=notifications/telegram.json" \
      -jar allure-notifications-4.1.jar
 
- java "-DconfigFile=notifications/telegram.json" -jar allure-notifications-4.1.jar
+
+      java "-DconfigFile=notifications/telegram.json" -jar allure-notifications-4.1.jar
+      java "-DconfigFile=C:\Users\Julia\IdeaProjects\Jenkins-QA-10\notifications\telegram.json" -jar allure-notifications-4.2.0.jar
