@@ -1,5 +1,6 @@
 package tests.demoqa;
 
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,8 @@ public class RegistrationFormTests extends TestBase {
 
         step("Open registration form", () -> {
                     open("/automation-practice-form");
-                    $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+
+                   $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
                     executeJavaScript("$('footer').remove()");
                     executeJavaScript("$('#fixedban').remove()");
                 });
