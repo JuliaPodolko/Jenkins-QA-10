@@ -20,12 +20,12 @@ public class TestBase {
      //   Configuration.baseUrl = "https://demoqa.com";
      //   Configuration.browserSize = "1920x1080";
        // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        String browserSize = System.getProperty("browserSize", "1920x1080");
-        String browser = System.getProperty("browser", "chrome");
-        String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        String browserSize = System.getProperty("browserSize");
+        String browser = System.getProperty("browser");
+        String baseUrl = System.getProperty("baseUrl");
         String https= "https://";
         String credentials = config.login() + ":" + config.password() + "@";
-        String selenoidUrl = System.getProperty("selenoidUrl", "selenoid.autotests.cloud/wd/hub");
+        String selenoidUrl = System.getProperty("selenoidUrl");
         Configuration.remote = https + credentials + selenoidUrl;
         Configuration.baseUrl = baseUrl;
         Configuration.browserSize = browserSize;
