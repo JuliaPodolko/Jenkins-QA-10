@@ -58,9 +58,9 @@ public class TestBase {
 
         Configuration.remote = selenoidConnectionString;
         Configuration.baseUrl = "https://demoqa.com";
-     //   Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1920x1080";
     //    Configuration.browser = browserType;
-        Configuration.browserSize = browserSize;
+     //   Configuration.browserSize = browserSize;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
