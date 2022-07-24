@@ -16,51 +16,26 @@ public class TestBase {
 
     @BeforeAll
     static void setUP () {
-   /*     CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+        CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
 
      //   Configuration.baseUrl = "https://demoqa.com";
      //   Configuration.browserSize = "1920x1080";
        // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        String browserSize = System.getProperty("browserSize");
-        String browser = System.getProperty("browser");
-        String baseUrl = System.getProperty("baseUrl");
+        String browserSize = System.getProperty("browserSize", "1920x1080");
+        String browser = System.getProperty("browser", "chrome");
+        String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         String selenoidLogin = credentialsConfig.login();
         String selenoidPassword = credentialsConfig.password();
-    //    String https= "https://";
-    //    String credentials = config.login() + ":" + config.password();
-        String selenoidUrl = System.getProperty("selenoidUrl");
-
-    //    Configuration.remote = https + credentials + selenoidUrl;
+        String selenoidUrl = System.getProperty("selenoidUrl", "selenoid.autotests.cloud");
         String selenoidConnectionString = String.format("https://%s:%s@%s/wd/hub",
                 selenoidLogin,
                 selenoidPassword,
                 selenoidUrl);
-        System.out.println(selenoidUrl);
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = baseUrl;
         Configuration.browserSize = browserSize;
         Configuration.browser = browser;
-        Configuration.remote = selenoidConnectionString; */
-
-        CredentialsConfig credentialConfig = ConfigFactory.create(CredentialsConfig.class);
-        String selenoidLogin = credentialConfig.login();
-        String selenoidPassword = credentialConfig.password();
-
-        String selenoidURL = System.getProperty("selenoidURL", "selenoid.autotests.cloud");
-        System.out.println(selenoidURL);
-        String selenoidConnectionString = String.format("https://%s:%s@%s/wd/hub",
-                selenoidLogin,
-                selenoidPassword,
-                selenoidURL);
-        SelenideLogger.addListener("allure", new AllureSelenide());
-    //    String browserType = System.getProperty("browserType", "chrome");
-     //   String browserSize = System.getProperty("browserSize", "1920x1080");
-
         Configuration.remote = selenoidConnectionString;
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    //    Configuration.browser = browserType;
-     //   Configuration.browserSize = browserSize;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
