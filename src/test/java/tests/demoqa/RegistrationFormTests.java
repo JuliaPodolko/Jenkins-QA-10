@@ -31,7 +31,7 @@ public class RegistrationFormTests extends TestBase {
                     open("/automation-practice-form");
 
                    $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-                    executeJavaScript("$('footer').remove()");
+                    Selenide.executeJavaScript("$('footer').remove()");
                     executeJavaScript("$('#fixedban').remove()");
                 });
         step("Fill registration form", () -> {
