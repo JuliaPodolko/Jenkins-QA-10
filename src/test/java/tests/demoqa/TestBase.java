@@ -53,10 +53,12 @@ public class TestBase {
                 selenoidPassword,
                 selenoidURL);
         SelenideLogger.addListener("allure", new AllureSelenide());
+        String browser = System.getProperty("browser", "chrome");
 
         Configuration.remote = selenoidConnectionString;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.browser = browser;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
