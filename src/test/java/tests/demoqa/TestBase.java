@@ -18,6 +18,8 @@ public class TestBase {
     static void setUP () {
         CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
 
+        String version = System.getProperty("version", "100");
+
         String browserSize = System.getProperty("browserSize", "1920x1080");
         String browser = System.getProperty("browser", "chrome");
         String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
@@ -33,6 +35,7 @@ public class TestBase {
         Configuration.browserSize = browserSize;
         Configuration.browser = browser;
         Configuration.remote = selenoidConnectionString;
+        Configuration.browserVersion = version;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
